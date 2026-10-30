@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>ページ</p>
+    <button onclick="myfunc()">Hello</button>
+    <button onclick="showDouble()">2倍を表示</button>
+    <script>
+        function myfunc(){
+            console.log("Hello");
+        }
+
+        function double(n){
+            return n*2;
+        }
+
+        function showDouble(){
+            const result=double(21);
+            console.log(`21倍の2倍は${result}`);
+        }
+    </script>
+</body>
+</html>
