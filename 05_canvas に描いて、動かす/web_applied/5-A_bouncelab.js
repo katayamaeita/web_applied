@@ -11,6 +11,8 @@ let color="#ffd166";
 let last = performance.now();
 
 function update(dt) {
+ // ▼ 重力を加える（1秒ごとに下に 600 加算するイメージ）
+  vy = vy + 600 * dt;
   x = x + vx * dt;
   y = y + vy * dt;
 
