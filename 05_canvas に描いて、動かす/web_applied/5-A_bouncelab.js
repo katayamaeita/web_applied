@@ -7,6 +7,7 @@ let y = 80;
 let vx = 180;         // 横の速さ（1秒に180px）
 let vy = 140;         // 縦の速さ（1秒に140px。＋ は下へ）
 const r = 14;         // 半径
+let color="#ffd166";
 let last = performance.now();
 
 function update(dt) {
@@ -35,7 +36,7 @@ function update(dt) {
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "#ffd166";
+  ctx.fillStyle = color;
   ctx.beginPath();
   ctx.arc(x, y, r, 0, Math.PI * 2);
   ctx.fill();
@@ -60,13 +61,14 @@ document.addEventListener("keydown", (e) => {
   }
   // ここに、ほかのキーを足す
   if (e.code === "ArrowLeft") {
-    ctx.fillStyle="#ff00ff";
+    color="#ff00ff";
   }
   if (e.code === "ArrowRight") {
-    ctx.fillStyle="#90ff00";
+    color="#90ff00";
   }
   if (e.code === "ArrowDown") {
-    let r=r+10;
+    vx = vx * 0.8;   // 速さを1.2倍（向きはそのまま）
+    vy = vy * 0.8;
   }
 });
 
