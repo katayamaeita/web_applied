@@ -53,4 +53,21 @@ function loop(now) {
   requestAnimationFrame(loop);
 }
 
+document.addEventListener("keydown", (e) => {
+  if (e.code === "ArrowUp") {
+    vx = vx * 1.2;   // 速さを1.2倍（向きはそのまま）
+    vy = vy * 1.2;
+  }
+  // ここに、ほかのキーを足す
+  if (e.code === "ArrowLeft") {
+    ctx.fillStyle="#ff00ff";
+  }
+  if (e.code === "ArrowRight") {
+    ctx.fillStyle="#90ff00";
+  }
+  if (e.code === "ArrowDown") {
+    let r=r+10;
+  }
+});
+
 requestAnimationFrame(loop);
